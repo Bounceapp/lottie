@@ -1,5 +1,7 @@
 lib/
 
+.eslintcache
+
 # OSX
 .DS_Store
 

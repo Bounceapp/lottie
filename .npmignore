@@ -5,6 +5,7 @@ example/
 **/__tests__
 **/__fixtures__
 **/__mocks__
+.eslintcache
 
 yarn-error.log
 CONTRIBUTING.md

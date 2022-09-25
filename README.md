@@ -4,23 +4,23 @@
 
 Lottie wrapper for React Native Web
 
-## 📱 Platform Compatibility
+## Platform Compatibility
 
 | Android Device | Android Emulator | iOS Device | iOS Simulator | Web |
 | -------------- | ---------------- | ---------- | ------------- | --- |
 | ✅             | ✅               | ✅         | ✅            | ✅  |
 
-## 📚 Documentation
+## Documentation
 
 [API Reference](https://bounceapp.github.io/lottie/)
 
-## 🧱 Installation
+## Installation
 
 ```bash
 npx expo install @bounceapp/lottie lottie-react-native lottie-ios lottie-react
 ```
 
-## 🏡 Usage
+## Usage
 
 ```tsx
 import React from "react"
