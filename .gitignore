@@ -1,0 +1,16 @@
+lib/
+
+# OSX
+.DS_Store
+
+# Documentation
+docs
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Expo
+.expo/*

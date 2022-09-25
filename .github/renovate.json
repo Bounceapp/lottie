@@ -1,0 +1,59 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":dependencyDashboard"],
+  "timezone": "Europe/Lisbon",
+  "labels": ["dependencies"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": true,
+    "schedule": null,
+    "stabilityDays": 0
+  },
+  "packageRules": [
+    {
+      "groupName": "manual",
+      "matchPackageNames": [
+        "expo",
+        "lottie-ios",
+        "lottie-react",
+        "lottie-react-native",
+        "react",
+        "react-dom",
+        "react-native",
+        "react-native-web"
+      ],
+      "enabled": false
+    },
+    {
+      "groupName": "linting",
+      "matchPackageNames": [
+        "lint-staged",
+        "prettier",
+        "@commitlint/cli",
+        "@commitlint/config-conventional",
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "eslint",
+        "eslint-config-prettier",
+        "eslint-config-universe",
+        "eslint-plugin-import",
+        "eslint-plugin-jest",
+        "eslint-plugin-node",
+        "eslint-plugin-prettier",
+        "eslint-plugin-react",
+        "eslint-plugin-react-hooks",
+        "eslint-plugin-react-native",
+        "eslint-plugin-unused-imports"
+      ],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["*"],
+      "automerge": true
+    }
+  ]
+}
