@@ -1,7 +1,7 @@
 import Lottie, { LottieRef } from "lottie-react"
 import React, { forwardRef, useImperativeHandle, useRef } from "react"
 
-import { LottieViewProps, LottieViewRef } from "./types"
+import type { LottieViewProps, LottieViewRef } from "./types"
 
 /**
  * ```tsx
@@ -26,10 +26,7 @@ import { LottieViewProps, LottieViewRef } from "./types"
  * @category Component
  */
 const LottieView = forwardRef<LottieViewRef, LottieViewProps>(
-  (
-    { source, style, loop, autoPlay, onAnimationFinish }: LottieViewProps,
-    ref,
-  ) => {
+  ({ source, style, loop, autoPlay, onAnimationFinish }, ref) => {
     const lottieRef: LottieRef = useRef(null)
 
     useImperativeHandle(ref, () => ({

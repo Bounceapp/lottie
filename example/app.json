@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "lottie-example",
+    "slug": "lottie-example",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

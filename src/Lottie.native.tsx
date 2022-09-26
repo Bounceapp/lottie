@@ -7,7 +7,7 @@ import React, {
 } from "react"
 import { Platform } from "react-native"
 
-import { LottieViewProps, LottieViewRef } from "./types"
+import type { LottieViewProps, LottieViewRef } from "./types"
 
 const LottieView = forwardRef<LottieViewRef, LottieViewProps>(
   ({ source, style, loop, autoPlay, onAnimationFinish }, ref) => {

@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -27,7 +26,6 @@
     "@expo/webpack-config": "0.16.21",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-preset-expo": "9.1.0",
-    "ts-node": "10.9.1",
     "typescript": "4.8.3"
   }
 }

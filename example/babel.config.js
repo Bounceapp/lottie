@@ -9,7 +9,6 @@ module.exports = function (api) {
           alias: {
             "@bounceapp/lottie": "../src",
           },
-          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
       ],
     ],
