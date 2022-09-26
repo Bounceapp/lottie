@@ -1,6 +1,6 @@
 {
   "name": "@bounceapp/lottie",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "description": "Lottie wrapper for React Native Web",
   "version": "0.0.2",
