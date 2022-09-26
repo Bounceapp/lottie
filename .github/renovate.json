@@ -1,8 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":dependencyDashboard"],
+  "extends": ["config:base", ":dependencyDashboard", ":semanticCommits"],
   "timezone": "Europe/Lisbon",
   "labels": ["dependencies"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "baseBranches": ["main"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
