@@ -6,8 +6,11 @@
   "postUpdateOptions": ["yarnDedupeHighest"],
   "baseBranches": ["main"],
   "lockFileMaintenance": {
-    "enabled": true,
+    "enabled": false,
     "automerge": true
+  },
+  "major": {
+    "dependencyDashboardApproval": true
   },
   "vulnerabilityAlerts": {
     "labels": ["security"],
