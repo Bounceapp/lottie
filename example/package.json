@@ -21,8 +21,8 @@
     "react-native-web": "0.17.7"
   },
   "devDependencies": {
-    "@babel/core": "7.19.1",
-    "@babel/preset-env": "7.19.1",
+    "@babel/core": "7.19.3",
+    "@babel/preset-env": "7.19.3",
     "@expo/webpack-config": "0.17.2",
     "babel-plugin-module-resolver": "4.1.0",
     "babel-preset-expo": "9.2.0",
