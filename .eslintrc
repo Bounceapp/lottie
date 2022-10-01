@@ -1,6 +1,11 @@
 {
   "root": true,
-  "extends": ["universe/native", "universe/node", "universe/web", "plugin:react-hooks/recommended"],
+  "extends": [
+    "universe/native",
+    "universe/node",
+    "universe/web",
+    "plugin:react-hooks/recommended"
+  ],
   "plugins": ["unused-imports", "react-native"],
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -12,9 +17,18 @@
     "import/order": [
       "warn",
       {
-        "groups": ["builtin", "external", ["parent", "sibling", "index"], "object"],
+        "groups": [
+          "builtin",
+          "external",
+          ["parent", "sibling", "index"],
+          "object"
+        ],
         "pathGroups": [
-          { "group": "object", "pattern": "*.@(jpg|png|svg)", "patternOptions": { "matchBase": true } },
+          {
+            "group": "object",
+            "pattern": "*.@(jpg|png|svg)",
+            "patternOptions": { "matchBase": true }
+          }
         ],
         "pathGroupsExcludedImportTypes": [],
         "newlines-between": "always",
@@ -40,18 +54,21 @@
         "caughtErrorsIgnorePattern": "^_"
       }
     ],
+    "no-else-return": "warn"
   },
   "overrides": [
     {
       "files": ["**/*.*(ts|tsx)"],
       "rules": {
-        "@typescript-eslint/no-unnecessary-condition": "warn"
+        "@typescript-eslint/no-unnecessary-condition": "warn",
+        "@typescript-eslint/dot-notation": "error",
+        "@typescript-eslint/await-thenable": "error"
       }
     },
     {
       "files": ["**/*.*(spec|test).*(ts|tsx)"],
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended", "plugin:jest/style"]
-    },
+    }
   ]
 }
