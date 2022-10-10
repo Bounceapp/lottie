@@ -1,6 +1,8 @@
 # @bounceapp/lottie
 
-[![Version](https://img.shields.io/npm/v/@bounceapp/lottie.svg)](https://www.npmjs.com/package/@bounceapp/lottie) [![License](https://img.shields.io/github/license/Bounceapp/lottie)](https://github.com/Bounceapp/lottie/blob/master/LICENSE)
+[![Package version](https://img.shields.io/npm/v/@bounceapp/lottie?style=for-the-badge&labelColor=000000)](https://www.npmjs.com/package/@bounceapp/lottie)
+[![MIT license](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=for-the-badge&labelColor=000000)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-hotpink.svg?style=for-the-badge&labelColor=000000)](https://github.com/dcangulo/@bounceapp/lottie/pulls)
 
 Lottie wrapper for React Native Web
 

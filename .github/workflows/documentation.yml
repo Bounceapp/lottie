@@ -22,7 +22,7 @@ jobs:
           restore-keys: yarn-cache-
       - run: yarn install --immutable
       - name: Build docs
-        run: yarn docs
+        run: yarn build:docs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

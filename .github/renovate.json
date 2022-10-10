@@ -177,6 +177,20 @@
       "automerge": true
     },
     {
+      "groupName": "storybook",
+      "matchPackageNames": [
+        "@storybook/addon-actions",
+        "@storybook/addon-essentials",
+        "@storybook/addon-interactions",
+        "@storybook/addon-links",
+        "@storybook/builder-webpack4",
+        "@storybook/manager-webpack4",
+        "@storybook/react",
+        "@storybook/testing-library"
+      ],
+      "automerge": true
+    },
+    {
       "matchPackagePatterns": ["*"],
       "automerge": true
     }

@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "platforms": ["android", "ios", "web"]
   }
 }
