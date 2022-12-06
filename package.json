@@ -88,7 +88,7 @@
     "@types/jest": "28.1.8",
     "@types/prettier": "2.7.1",
     "@types/react": "17.0.50",
-    "@types/react-native": "0.70.7",
+    "@types/react-native": "0.70.8",
     "expo": "45.0.6",
     "lottie-ios": "3.2.3",
     "lottie-react": "2.3.1",
@@ -127,7 +127,7 @@
   },
   "resolutions": {
     "@types/react": "17.0.50",
-    "@types/react-native": "0.70.7",
+    "@types/react-native": "0.70.8",
     "shell-quote": ">=1.7.3"
   }
 }
