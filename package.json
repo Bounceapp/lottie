@@ -86,7 +86,7 @@
     "@storybook/testing-library": "0.0.13",
     "@release-it/conventional-changelog": "5.1.1",
     "@types/jest": "28.1.8",
-    "@types/prettier": "2.7.1",
+    "@types/prettier": "2.7.2",
     "@types/react": "17.0.50",
     "@types/react-native": "0.70.8",
     "expo": "45.0.6",
