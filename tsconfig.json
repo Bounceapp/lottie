@@ -2,9 +2,6 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@bounceapp/lottie": ["./src/index"]
-    },
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -12,6 +9,9 @@
     "resolveJsonModule": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "paths": {
+      "@bounceapp/lottie": ["./src/index"]
+    }
   }
 }

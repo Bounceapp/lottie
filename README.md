@@ -19,7 +19,7 @@ Lottie wrapper for React Native Web
 ## Installation
 
 ```bash
-npx expo install @bounceapp/lottie lottie-react-native lottie-ios lottie-react
+npx expo install @bounceapp/lottie lottie-react-native lottie-react
 ```
 
 ## Usage
