@@ -41,7 +41,7 @@ const LottieView = forwardRef<LottieViewRef, LottieViewProps>(
         lottieRef={lottieRef}
         animationData={source}
         loop={loop}
-        autoPlay={autoPlay}
+        autoplay={autoPlay}
         style={style as React.CSSProperties}
         onComplete={onAnimationFinish}
       />
