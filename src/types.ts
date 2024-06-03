@@ -1,10 +1,10 @@
-import type { AnimatedLottieViewProps } from "lottie-react-native"
+import type { LottieViewProps as RNLottieViewProps } from "lottie-react-native"
 
 /**
  * The props type for {@link LottieView}.
  */
 export type LottieViewProps = Pick<
-  AnimatedLottieViewProps,
+  RNLottieViewProps,
   "source" | "style" | "loop" | "autoPlay"
 > & {
   onAnimationFinish?: () => void
