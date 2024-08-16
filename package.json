@@ -111,7 +111,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.1",
-    "react-native-builder-bob": "0.29.1",
+    "react-native-builder-bob": "0.30.0",
     "react-native-web": "~0.19.10",
     "release-it": "15.11.0",
     "storybook": "7.6.20",
