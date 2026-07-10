@@ -1,17 +1,12 @@
-docs/
 example/
-.tmp/
 .github/
 **/__tests__
 **/__fixtures__
 **/__mocks__
-.eslintcache
+**/*.stories.*
 
 yarn-error.log
 CONTRIBUTING.md
-babel.config.js
+.babelrc.json
 tsconfig.json
 yarn.lock
-
-
-

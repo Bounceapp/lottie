@@ -12,33 +12,13 @@ yarn
 
 > While it's possible to use [`npm`](https://github.com/npm/cli), the tooling is built around [`yarn`](https://classic.yarnpkg.com/), so you'll have an easier time if you use `yarn` for development.
 
-While developing, you can run the [example app](/example/) to test your changes. Any changes you make in your library's JavaScript code will be reflected in the example app without a rebuild. If you change any native code, then you'll need to rebuild the example app.
-
-To start the packager:
+While developing, you can run Storybook to preview your changes:
 
 ```sh
-yarn example start
+yarn dev:docs
 ```
 
-To run the example app on Android:
-
-```sh
-yarn example android
-```
-
-To run the example app on iOS:
-
-```sh
-yarn example ios
-```
-
-To run the example app on Web:
-
-```sh
-yarn example web
-```
-
-Make sure your code passes TypeScript and ESLint. Run the following to verify:
+Make sure your code passes TypeScript and Biome. Run the following to verify:
 
 ```sh
 yarn typecheck
@@ -72,9 +52,9 @@ Our pre-commit hooks verify that your commit message matches this format when co
 
 ### Linting and tests
 
-[ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/)
+[Biome](https://biomejs.dev/), [TypeScript](https://www.typescriptlang.org/)
 
-We use [TypeScript](https://www.typescriptlang.org/) for type checking, [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
+We use [TypeScript](https://www.typescriptlang.org/) for type checking, [Biome](https://biomejs.dev/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
 
 Our pre-commit hooks verify that the linter and tests pass when committing.
 
@@ -93,7 +73,7 @@ yarn release
 The `package.json` file contains various scripts for common tasks:
 
 - `yarn typescript`: type-check files with TypeScript.
-- `yarn lint`: lint files with ESLint.
+- `yarn lint`: lint and check formatting with Biome.
 - `yarn test`: run unit tests with Jest.
 
 ### Sending a pull request

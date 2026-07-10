@@ -1,2 +1,2 @@
-export { LottieView } from "./Lottie"
-export type { LottieViewProps } from "./types"
+export { LottieView } from "./components/LottieView"
+export type { LottieViewProps } from "./components/types"

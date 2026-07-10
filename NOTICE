@@ -1,0 +1,10 @@
+This project is licensed under the MIT License (see LICENSE).
+
+It includes source code adapted from lottie-react-native
+(https://github.com/lottie-react-native/lottie-react-native), which is
+licensed under the Apache License, Version 2.0. See LICENSE-APACHE for
+the full license text.
+
+Files derived from lottie-react-native:
+  - src/components/types.ts
+  - src/components/LottieView.react.tsx
