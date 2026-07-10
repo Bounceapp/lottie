@@ -2,7 +2,7 @@
 // licensed under the Apache License, Version 2.0. See NOTICE and LICENSE-APACHE.
 
 import { type DotLottie, DotLottieReact } from "@lottiefiles/dotlottie-react"
-import React, {
+import {
   forwardRef,
   type Ref,
   useCallback,
@@ -23,6 +23,7 @@ type ParsedSource =
   | undefined
 
 const parsePossibleSources = (source: unknown): ParsedSource => {
+  // biome-ignore lint/suspicious/noExplicitAny: source shape is validated by the checks below
   const uri = (source as any).uri
 
   if (typeof source === "string") {
@@ -116,6 +117,7 @@ export const LottieView = forwardRef(
 
     useEffect(() => {
       if (progress != null && __DEV__) {
+        // biome-ignore lint/suspicious/noConsole: intentional dev-only warning
         console.warn("lottie-react-native: progress is not supported on web")
       }
     }, [progress])
@@ -145,6 +147,7 @@ export const LottieView = forwardRef(
               dotLottie.play()
             }
           } catch (error) {
+            // biome-ignore lint/suspicious/noConsole: surface playback errors during development
             console.error(error)
           }
         },
