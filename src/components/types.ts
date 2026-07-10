@@ -1,7 +1,6 @@
 // Adapted from lottie-react-native (https://github.com/lottie-react-native/lottie-react-native),
 // licensed under the Apache License, Version 2.0. See NOTICE and LICENSE-APACHE.
 
-import type { CSSProperties } from "react"
 import type { LayoutChangeEvent, StyleProp, ViewStyle } from "react-native"
 
 /**
@@ -86,12 +85,6 @@ export interface LottieViewProps {
    * @platform ios, android, windows
    */
   style?: StyleProp<ViewStyle>
-
-  /**
-   * Style attributes for the web.
-   * @platform web
-   */
-  webStyle?: CSSProperties
 
   /**
    * Determines how to resize the animated view when the frame doesn't match the raw image

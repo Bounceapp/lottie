@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-native-web-vite"
 import type React from "react"
 
 import lottieAnimation from "../../example/lottieAnimation.json"
-import splashScreenLottie from "../../example/splash-screen.lottie"
+import splashScreenAnimation from "../../example/splash-screen.json"
 import { LottieView as LottieViewReact } from "./LottieView.react"
 import { LottieView as LottieViewWeb } from "./LottieView.web"
 import type { LottieViewProps } from "./types"
@@ -60,7 +60,7 @@ export const SplashScreen: StoryObj<LottieViewProps> = {
     style: { width: 200, height: 200 },
     autoPlay: true,
     loop: true,
-    source: { uri: splashScreenLottie },
+    source: splashScreenAnimation,
   },
   render: args => (
     <div style={rowStyle}>

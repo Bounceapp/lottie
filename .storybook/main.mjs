@@ -5,9 +5,4 @@ export default {
     options: {},
   },
   docs: {},
-  viteFinal: config => {
-    config.assetsInclude ??= []
-    config.assetsInclude = [].concat(config.assetsInclude, "**/*.lottie")
-    return config
-  },
 }

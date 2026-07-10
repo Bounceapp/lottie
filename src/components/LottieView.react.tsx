@@ -1,48 +1,21 @@
 // Adapted from lottie-react-native (https://github.com/lottie-react-native/lottie-react-native),
 // licensed under the Apache License, Version 2.0. See NOTICE and LICENSE-APACHE.
 
-import { type DotLottie, DotLottieReact } from "@lottiefiles/dotlottie-react"
+import Lottie, { type LottieRef } from "lottie-react"
 import {
   forwardRef,
   type Ref,
-  useCallback,
   useEffect,
   useImperativeHandle,
-  useState,
+  useRef,
 } from "react"
 
 import type { LottieViewProps } from "./types"
 
-type ParsedSource =
-  | {
-      sourceURL?: string
-      sourceJson?: string
-      sourceName?: string
-      sourceDotLottieURI?: string
-    }
-  | undefined
-
-const parsePossibleSources = (source: unknown): ParsedSource => {
-  // biome-ignore lint/suspicious/noExplicitAny: source shape is validated by the checks below
-  const uri = (source as any).uri
-
-  if (typeof source === "string") {
-    return { sourceName: source }
+const parseAnimationData = (source: LottieViewProps["source"]) => {
+  if (typeof source === "object" && !("uri" in source)) {
+    return source
   }
-
-  if (typeof source === "object" && !uri) {
-    return { sourceJson: JSON.stringify(source) }
-  }
-
-  if (typeof source === "object" && uri) {
-    // uri contains .lottie extension return sourceDotLottieURI
-    if (uri.includes(".lottie")) {
-      return { sourceDotLottieURI: uri }
-    }
-
-    return { sourceURL: uri }
-  }
-
   return undefined
 }
 
@@ -52,7 +25,7 @@ export const LottieView = forwardRef(
       source,
       speed,
       loop,
-      webStyle,
+      style,
       autoPlay,
       hover,
       direction,
@@ -69,50 +42,16 @@ export const LottieView = forwardRef(
       resume: () => void
     }>,
   ) => {
-    const [dotLottie, setDotLottie] = useState<DotLottie | null>(null)
-    const sources = parsePossibleSources(source)
-    const dotLottieRefCallback = useCallback((dotLottie: DotLottie) => {
-      setDotLottie(dotLottie)
-    }, [])
+    const lottieRef: LottieRef = useRef(null)
+    const animationData = parseAnimationData(source)
 
     useEffect(() => {
-      if (dotLottie) {
-        dotLottie.addEventListener("load", () => {
-          onAnimationLoaded?.()
-        })
-        dotLottie.addEventListener("loadError", e => {
-          onAnimationFailure?.(e.error.message)
-        })
-        dotLottie.addEventListener("complete", () => {
-          onAnimationFinish?.(false)
-        })
-        dotLottie.addEventListener("stop", () => {
-          onAnimationFinish?.(true)
-        })
-        dotLottie.addEventListener("pause", () => {
-          onAnimationFinish?.(true)
-        })
-        dotLottie.addEventListener("loop", () => {
-          onAnimationLoop?.()
-        })
+      lottieRef.current?.setSpeed(speed ?? 1)
+    }, [speed])
 
-        return () => {
-          dotLottie.removeEventListener("load")
-          dotLottie.removeEventListener("loadError")
-          dotLottie.removeEventListener("complete")
-          dotLottie.removeEventListener("stop")
-          dotLottie.removeEventListener("pause")
-          dotLottie.removeEventListener("loop")
-        }
-      }
-      return undefined
-    }, [
-      dotLottie,
-      onAnimationFailure,
-      onAnimationFinish,
-      onAnimationLoaded,
-      onAnimationLoop,
-    ])
+    useEffect(() => {
+      lottieRef.current?.setDirection(direction === -1 ? -1 : 1)
+    }, [direction])
 
     useEffect(() => {
       if (progress != null && __DEV__) {
@@ -124,26 +63,23 @@ export const LottieView = forwardRef(
     useImperativeHandle(ref, () => {
       return {
         play: (s?: number, e?: number) => {
-          if (!dotLottie) return
           try {
             const bothDefined = s !== undefined && e !== undefined
             const bothUndefined = s === undefined && e === undefined
             const bothEqual = e === s
             if (bothDefined) {
               if (bothEqual) {
-                dotLottie.setFrame(e)
-                dotLottie.play()
+                lottieRef.current?.goToAndPlay(e, true)
                 return
               }
-              dotLottie.setSegment(s, e)
+              lottieRef.current?.playSegments([s, e], true)
               return
             }
             if (s !== undefined && e === undefined) {
-              dotLottie.setFrame(s)
-              dotLottie.play()
+              lottieRef.current?.goToAndPlay(s, true)
             }
             if (bothUndefined) {
-              dotLottie.play()
+              lottieRef.current?.play()
             }
           } catch (error) {
             // biome-ignore lint/suspicious/noConsole: surface playback errors during development
@@ -151,34 +87,41 @@ export const LottieView = forwardRef(
           }
         },
         reset: () => {
-          dotLottie?.setFrame(0)
+          lottieRef.current?.goToAndPlay(0)
         },
         pause: () => {
-          dotLottie?.pause()
+          lottieRef.current?.pause()
+          onAnimationFinish?.(true)
         },
         resume: () => {
-          dotLottie?.play()
+          lottieRef.current?.play()
         },
       }
-    }, [dotLottie])
+    }, [onAnimationFinish])
 
-    if (!sources) {
+    if (!animationData) {
+      if (__DEV__) {
+        // biome-ignore lint/suspicious/noConsole: intentional dev-only warning
+        console.warn(
+          "lottie-react-native: string and remote uri sources are not supported on web, pass parsed animation JSON instead",
+        )
+      }
       return null
     }
 
     return (
-      <DotLottieReact
-        dotLottieRefCallback={dotLottieRefCallback}
-        data={sources.sourceJson}
-        src={
-          sources.sourceDotLottieURI ?? sources.sourceURL ?? sources.sourceName
-        }
-        style={webStyle}
+      <Lottie
+        lottieRef={lottieRef}
+        animationData={animationData}
+        style={style as React.CSSProperties}
         autoplay={autoPlay}
-        speed={speed}
         loop={loop}
-        playOnHover={hover}
-        mode={direction === -1 ? "reverse" : "forward"}
+        onMouseEnter={hover ? () => lottieRef.current?.play() : undefined}
+        onMouseLeave={hover ? () => lottieRef.current?.stop() : undefined}
+        onComplete={() => onAnimationFinish?.(false)}
+        onLoopComplete={() => onAnimationLoop?.()}
+        onDOMLoaded={() => onAnimationLoaded?.()}
+        onDataFailed={() => onAnimationFailure?.("Failed to load animation")}
       />
     )
   },

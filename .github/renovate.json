@@ -22,7 +22,7 @@
     {
       "groupName": "manual",
       "matchPackageNames": [
-        "@lottiefiles/dotlottie-react",
+        "lottie-react",
         "lottie-react-native",
         "react",
         "react-dom",

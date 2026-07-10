@@ -19,7 +19,7 @@ Lottie wrapper for React Native Web
 ## Installation
 
 ```bash
-npx expo install @bounceapp/lottie lottie-react-native @lottiefiles/dotlottie-react
+npx expo install @bounceapp/lottie lottie-react-native lottie-react
 ```
 
 ## Usage
@@ -42,69 +42,6 @@ const App = () => (
 
 export default App
 ```
-
-### dotLottie (`.lottie`) files
-
-On web, `source` can also point to a `.lottie` file:
-
-```tsx
-import splashScreen from "./splash-screen.lottie"
-
-const App = () => (
-  <LottieView
-    style={{ width: 100, height: 100 }}
-    autoPlay
-    loop
-    source={{ uri: splashScreen }}
-  />
-)
-```
-
-### Setting up `.lottie` import support
-
-`import`-ing a `.lottie` file works out of the box in this package's own Storybook (see `.storybook/main.mjs`), but a consuming app's own bundler and test runner need to be told how to handle the extension too:
-
-- **Metro (Expo/React Native)**: add `lottie` to `resolver.assetExts` so Metro bundles it like any other binary asset, and declare the module type so it resolves to the asset's numeric ID:
-
-  ```js
-  // metro.config.js
-  config.resolver.assetExts.push("lottie")
-  ```
-
-  ```ts
-  // e.g. types/assets.d.ts
-  declare module "*.lottie" {
-    const content: string
-    export default content
-  }
-  ```
-
-- **Webpack/Turbopack (Next.js, web)**: treat `*.lottie` as a static asset that resolves to a URL string:
-
-  ```ts
-  // next.config.ts
-  turbopack: {
-    rules: {
-      "*.lottie": { type: "asset" },
-    },
-  }
-  ```
-
-  ```ts
-  // e.g. types/assets.d.ts
-  declare module "*.lottie" {
-    const content: string
-    export default content
-  }
-  ```
-
-- **Jest**: add `lottie` to the binary-asset extensions in your `moduleNameMapper` so imports resolve through your existing file mock, e.g. `\.(png|jpg|...|lottie)$`.
-
-- **Vite-based tooling (Vitest, Storybook)**: add `.lottie` to `assetsInclude` so Vite treats it as a static asset instead of trying to parse it as source (see this package's own `.storybook/main.mjs` and `src/lottie-asset.d.ts` for a working example):
-
-  ```ts
-  assetsInclude: ["**/*.lottie"]
-  ```
 
 ## 👏 Contributing
 

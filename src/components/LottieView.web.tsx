@@ -1,1 +1,1 @@
-export { LottieView } from "./LottieView.native"
+export { LottieView } from "./LottieView.react"
