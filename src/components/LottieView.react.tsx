@@ -57,7 +57,6 @@ export const LottieView = forwardRef(
       hover,
       direction,
       progress,
-      theme,
       onAnimationLoaded,
       onAnimationFailure,
       onAnimationFinish,
@@ -180,7 +179,6 @@ export const LottieView = forwardRef(
         loop={loop}
         playOnHover={hover}
         mode={direction === -1 ? "reverse" : "forward"}
-        themeId={theme}
       />
     )
   },

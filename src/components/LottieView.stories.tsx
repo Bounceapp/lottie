@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react-native-web-vite"
 import type React from "react"
 
 import lottieAnimation from "../../example/lottieAnimation.json"
-import spinnerLottie from "../../example/spinner.lottie"
 import splashScreenLottie from "../../example/splash-screen.lottie"
 import { LottieView as LottieViewReact } from "./LottieView.react"
 import { LottieView as LottieViewWeb } from "./LottieView.web"
@@ -50,28 +49,6 @@ export const SideBySide: StoryObj<LottieViewProps> = {
       <div style={columnStyle}>
         <span>LottieView.web</span>
         <LottieViewWeb {...args} />
-      </div>
-    </div>
-  ),
-}
-
-export const SpinnerThemes: StoryObj<LottieViewProps> = {
-  name: "Spinner (dotLottie themes)",
-  args: {
-    style: { width: 100, height: 100 },
-    autoPlay: true,
-    loop: true,
-    source: { uri: spinnerLottie },
-  },
-  render: args => (
-    <div style={rowStyle}>
-      <div style={columnStyle}>
-        <span>No theme</span>
-        <LottieViewReact {...args} />
-      </div>
-      <div style={columnStyle}>
-        <span>Dark theme</span>
-        <LottieViewReact {...args} theme="dark" />
       </div>
     </div>
   ),

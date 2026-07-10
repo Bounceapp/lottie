@@ -150,13 +150,6 @@ export interface LottieViewProps {
   colorFilters?: ColorFilter[]
 
   /**
-   * The ID of a theme embedded in the `.lottie` file's manifest to apply.
-   * Themes override colors and other visual properties defined by the animation.
-   * @platform web
-   */
-  theme?: string
-
-  /**
    * A string to identify the component during testing.
    */
   testID?: string

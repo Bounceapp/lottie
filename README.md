@@ -43,20 +43,19 @@ const App = () => (
 export default App
 ```
 
-### dotLottie (`.lottie`) files and themes
+### dotLottie (`.lottie`) files
 
-On web, `source` can also point to a `.lottie` file, which supports switching between themes embedded in the file's manifest via the `theme` prop:
+On web, `source` can also point to a `.lottie` file:
 
 ```tsx
-import spinner from "./spinner.lottie"
+import splashScreen from "./splash-screen.lottie"
 
 const App = () => (
   <LottieView
     style={{ width: 100, height: 100 }}
     autoPlay
     loop
-    source={{ uri: spinner }}
-    theme="dark"
+    source={{ uri: splashScreen }}
   />
 )
 ```
@@ -75,7 +74,7 @@ const App = () => (
   ```ts
   // e.g. types/assets.d.ts
   declare module "*.lottie" {
-    const content: number
+    const content: string
     export default content
   }
   ```
