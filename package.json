@@ -80,7 +80,7 @@
     "expo": "53.0.13",
     "husky": "8.0.3",
     "jest": "^30.4.2",
-    "lint-staged": "17.1.1",
+    "lint-staged": "17.2.0",
     "lottie-react": "2.4.1",
     "lottie-react-native": "7.3.8",
     "react": "19.0.0",
