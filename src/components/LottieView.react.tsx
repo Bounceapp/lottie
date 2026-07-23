@@ -19,6 +19,22 @@ const parseAnimationData = (source: LottieViewProps["source"]) => {
   return undefined
 }
 
+/**
+ * Converts a `dataSet` map into hyphenated `data-*` DOM attributes, matching the
+ * behaviour of `HTMLElement.dataset` (e.g. `{ fooBar: "baz" }` -> `data-foo-bar="baz"`).
+ */
+const dataSetToAttributes = (dataSet: LottieViewProps["dataSet"]) => {
+  if (!dataSet) {
+    return {}
+  }
+  const attributes: Record<string, string | number | boolean> = {}
+  for (const [key, value] of Object.entries(dataSet)) {
+    const attribute = `data-${key.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase()}`
+    attributes[attribute] = value
+  }
+  return attributes
+}
+
 export const LottieView = forwardRef(
   (
     {
@@ -30,6 +46,7 @@ export const LottieView = forwardRef(
       hover,
       direction,
       progress,
+      dataSet,
       onAnimationLoaded,
       onAnimationFailure,
       onAnimationFinish,
@@ -113,6 +130,7 @@ export const LottieView = forwardRef(
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
+        {...dataSetToAttributes(dataSet)}
         style={style as React.CSSProperties}
         autoplay={autoPlay}
         loop={loop}

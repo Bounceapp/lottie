@@ -39,6 +39,7 @@ export const SideBySide: StoryObj<LottieViewProps> = {
     autoPlay: true,
     loop: true,
     source: lottieAnimation,
+    dataSet: { customAttr: "value" },
   },
   render: args => (
     <div style={rowStyle}>

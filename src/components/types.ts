@@ -147,6 +147,14 @@ export interface LottieViewProps {
    */
   testID?: string
 
+  /**
+   * A map of custom data attributes to set on the underlying element. Equivalent to
+   * `HTMLElement.dataset`: keys are rendered as hyphenated `data-*` attributes
+   * (e.g. `{ fooBar: "baz" }` becomes `data-foo-bar="baz"`). On native this is a no-op.
+   * @platform android, ios, web
+   */
+  dataSet?: Record<string, string | number | boolean>
+
   // Android Props
 
   /**
