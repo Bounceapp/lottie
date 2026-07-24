@@ -73,7 +73,7 @@
     "@commitlint/cli": "21.2.1",
     "@commitlint/config-conventional": "21.2.0",
     "@release-it/conventional-changelog": "11.0.1",
-    "@storybook/react-native-web-vite": "10.5.3",
+    "@storybook/react-native-web-vite": "10.5.4",
     "@types/jest": "30.0.0",
     "@types/react": "~19.0.10",
     "@types/react-dom": "~19.0.4",
@@ -89,7 +89,7 @@
     "react-native-builder-bob": "0.43.0",
     "react-native-web": "^0.20.0",
     "release-it": "20.2.1",
-    "storybook": "10.5.3",
+    "storybook": "10.5.4",
     "typescript": "~7.0.2",
     "vite": "^8.1.4"
   },
