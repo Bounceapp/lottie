@@ -86,7 +86,7 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.4",
-    "react-native-builder-bob": "0.43.0",
+    "react-native-builder-bob": "0.43.1",
     "react-native-web": "^0.20.0",
     "release-it": "20.2.1",
     "storybook": "10.6.0",
