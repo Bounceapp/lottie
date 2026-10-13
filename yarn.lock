@@ -3107,10 +3107,10 @@
   dependencies:
     "@sinonjs/commons" "^3.0.1"
 
-"@storybook/builder-vite@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-10.6.1.tgz#ea69e6332c1f8f6eeebaee70040189805d597d55"
-  integrity sha512-kUMRRRS4MpJdxOLhrlQX3cpMYi2vVB3tIIRXyqWmAjVM6xT7OZ1SCQEMFPP+S3ToRqaYWZQb8aBqrJucbbYufA==
+"@storybook/builder-vite@10.6.2":
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-10.6.2.tgz#390a8d9e4936317c72a9a0193db7eec1c2489e3a"
+  integrity sha512-SzeQEGjvybdhP2coF4aIX6JX/7rZTrQCpRU3vAEO/R98Vr3xM8jdg7a3nvt91TeF/P8iWqljLIpaDjTdk2r/sQ==
   dependencies:
     ts-dedent "^2.0.0"
 
@@ -3124,44 +3124,44 @@
   resolved "https://registry.yarnpkg.com/@storybook/icons/-/icons-2.1.0.tgz#edfc2450a39c5e780f28c6cbc49acd7bff59b41a"
   integrity sha512-Fxh9vYpX9bQqFeHRiY8h2ApeRGDzRSMLwJwNZ/AIRqnyOKHxRKL+yFe+ctEkVJmuptRE9u1Hrn8ZZNHyfDKKNg==
 
-"@storybook/react-dom-shim@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.6.1.tgz#6d7adda7439e4f7729e93a7f26c51589a30bdf6a"
-  integrity sha512-OkPFycR6kVE+9ZsgQWRqnUfZm/sLY6dxsNAn3lsvV7DSAQWH9QnHLkqP9E/N/Hg6cKPDtGzDZ8vPNDz2FuaDuQ==
+"@storybook/react-dom-shim@10.6.2":
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-10.6.2.tgz#863ffe89bad54ef16e4bf01af536137577e8365b"
+  integrity sha512-k0262Vqxjk3wHeg3g/QO/ENDrkC7kkbuwsFSXOdYr7Sl888tsF1DAS7uQ/gr+s/BRz1FLYRX7wBY3smEUV4MJg==
 
-"@storybook/react-native-web-vite@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-native-web-vite/-/react-native-web-vite-10.6.1.tgz#805a6a708ecbd3a6c252328ca0c115966ba978cf"
-  integrity sha512-cYWD/peDr6anJxsdFCkHGMG6QLXuXNs/5tN8u6toh9Tn3N2ZsBEiMRFafFoMgVdgiWa/Z194qV8MR+fHrrgfiQ==
+"@storybook/react-native-web-vite@10.6.2":
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/@storybook/react-native-web-vite/-/react-native-web-vite-10.6.2.tgz#d90cd59006cbaed1904c214a7156c3bc94bdc41a"
+  integrity sha512-ZMnlAJISSVynUAxpmmdWufJ1hDfkrbrcuZk5XUs0AWJgLCtbYOMRsvvrrqTZ5Zfl/2n5Sbeo7aFE8SmhmxGRDg==
   dependencies:
-    "@storybook/builder-vite" "10.6.1"
-    "@storybook/react" "10.6.1"
-    "@storybook/react-vite" "10.6.1"
+    "@storybook/builder-vite" "10.6.2"
+    "@storybook/react" "10.6.2"
+    "@storybook/react-vite" "10.6.2"
     vite-plugin-rnw "^0.0.11"
     vite-tsconfig-paths "^6.1.1"
 
-"@storybook/react-vite@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-10.6.1.tgz#8f91a1d161a56581ddd2217eb915dcd767b742a6"
-  integrity sha512-oyUZxuW2lIJN8BRbYyMyZbfjeYqtF6HwmNfqa1SAF525zRnMewYp66wm/5d8FAgwqejOf6N2+wR3hX866lSwMA==
+"@storybook/react-vite@10.6.2":
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-10.6.2.tgz#6967f857a0f097940c6a33a87be74d9928d7d6fa"
+  integrity sha512-RfYSW9eefxRXk7IXKBTBkBYAspHKaxNVBR7mlXQAt+Z2bJZzj+S21mv6kBcpFIfAIT9wSIq8xMg0RbeR7CneVQ==
   dependencies:
     "@joshwooding/vite-plugin-react-docgen-typescript" "^0.7.0"
     "@rollup/pluginutils" "^5.0.2"
-    "@storybook/builder-vite" "10.6.1"
-    "@storybook/react" "10.6.1"
+    "@storybook/builder-vite" "10.6.2"
+    "@storybook/react" "10.6.2"
     empathic "^2.0.0"
     magic-string "^1.1.0"
     react-docgen "^8.0.2"
     resolve "^1.22.8"
     tsconfig-paths "^4.2.0"
 
-"@storybook/react@10.6.1":
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.6.1.tgz#3f42bc493e6836657a9a7f766b1447e6a0a8a977"
-  integrity sha512-t0QIzO0MVcpD52UEMZKSv35nO/+8vUnLGoFC1E3BIVjHEIdr6IFFM7ty2E7FWsaZGsah3XrFINKT3dPd2Atz+Q==
+"@storybook/react@10.6.2":
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-10.6.2.tgz#7349c908be4ecf49cc7a5d461460fdb3ee6fadf9"
+  integrity sha512-kNWUU6Q8TrLmEqAzYmNYhC9A3i3kbjFxqIcLL3eu+o4gDu0afp1Of6Sy6jIF2qPGH05A3r6FWMzD03y4Mm5xRw==
   dependencies:
     "@storybook/global" "^5.0.0"
-    "@storybook/react-dom-shim" "10.6.1"
+    "@storybook/react-dom-shim" "10.6.2"
     react-docgen "^8.0.2"
     react-docgen-typescript "^2.2.2"
 
@@ -8623,10 +8623,10 @@ stdin-discarder@^0.3.1:
   resolved "https://registry.yarnpkg.com/stdin-discarder/-/stdin-discarder-0.3.2.tgz#998ab3b9a988661e6036a9bfdc96f43649e8e83e"
   integrity sha512-eCPu1qRxPVkl5605OTWF8Wz40b4Mf45NY5LQmVPQ599knfs5QhASUm9GbJ5BDMDOXgrnh0wyEdvzmL//YMlw0A==
 
-storybook@10.6.1:
-  version "10.6.1"
-  resolved "https://registry.yarnpkg.com/storybook/-/storybook-10.6.1.tgz#57bb8fb2dbe549743db7d9ab672006633cac6971"
-  integrity sha512-NeEmukMWPA5OqHizUkQtxCIhGt7MUZLPY4FFgpC0LNiipjrac/oKpH0TxI+9Zc+vI5+IoN+NiskOmBP7gtYfmA==
+storybook@10.6.2:
+  version "10.6.2"
+  resolved "https://registry.yarnpkg.com/storybook/-/storybook-10.6.2.tgz#317b3e942896dc9f10a114ae7a88d75c81e48d70"
+  integrity sha512-qHDINMiapxFUxYb+xC3j8u7Y+85X3u+/PlytE/wmnyg+bU0agCW3jUmWP4vIh2MioO2jTK/2B3Lcw6IpRFzQBA==
   dependencies:
     "@storybook/global" "^5.0.0"
     "@storybook/icons" "^2.0.2"
