@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "Lottie Example",
+    "slug": "bounceapp-lottie-example",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.bounceapp.lottie.example"
+    },
+    "android": {
+      "package": "com.bounceapp.lottie.example"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

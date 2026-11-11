@@ -1,0 +1,12 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "resolveJsonModule": true,
+    // Import the library from source, so edits in ../src show up without a build.
+    // Metro follows these paths too.
+    "paths": {
+      "@bounceapp/lottie": ["../src/index"]
+    }
+  }
+}
