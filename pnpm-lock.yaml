@@ -172,6 +172,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: 21.2.4
         version: 21.2.4
+      '@commitlint/types':
+        specifier: 21.2.3
+        version: 21.2.3
       '@react-native/jest-preset':
         specifier: 0.88.1
         version: 0.88.1(@babel/core@7.29.7(supports-color@8.1.1))(react@19.3.0)(supports-color@8.1.1)

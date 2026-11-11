@@ -42,7 +42,8 @@
         "oxlint-tsgolint",
         "oxfmt",
         "@commitlint/cli",
-        "@commitlint/config-conventional"
+        "@commitlint/config-conventional",
+        "@commitlint/types"
       ],
       "automerge": true
     },
