@@ -1,5 +1,6 @@
 {
   "extends": "expo/tsconfig.base",
+  "include": ["**/*", ".storybook/**/*"],
   "compilerOptions": {
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
@@ -9,6 +10,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "strict": true,
+    "types": ["jest"],
     "paths": {
       "@bounceapp/lottie": ["./src/index"]
     }

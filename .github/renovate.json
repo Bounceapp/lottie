@@ -3,7 +3,7 @@
   "extends": ["config:base", ":dependencyDashboard", ":semanticCommits"],
   "timezone": "Europe/Lisbon",
   "labels": ["dependencies"],
-  "postUpdateOptions": ["yarnDedupeHighest"],
+  "postUpdateOptions": ["pnpmDedupe"],
   "baseBranches": ["main"],
   "lockFileMaintenance": {
     "enabled": false,
@@ -37,8 +37,10 @@
     {
       "groupName": "linting",
       "matchPackageNames": [
-        "lint-staged",
-        "@biomejs/biome",
+        "lefthook",
+        "oxlint",
+        "oxlint-tsgolint",
+        "oxfmt",
         "@commitlint/cli",
         "@commitlint/config-conventional"
       ],

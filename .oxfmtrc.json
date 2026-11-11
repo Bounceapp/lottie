@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "semi": false,
+  "arrowParens": "avoid",
+  "bracketSameLine": true,
+  "sortImports": true,
+  "sortPackageJson": false,
+  "ignorePatterns": ["lib", "docs", "example", "pnpm-workspace.yaml"]
+}
