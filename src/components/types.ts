@@ -15,11 +15,11 @@ export interface AnimationObject {
   h: number
   nm?: string
   ddd?: number
-  // biome-ignore lint/suspicious/noExplicitAny: raw After Effects export, shape not worth modeling
+  // oxlint-disable-next-line typescript/no-explicit-any -- raw After Effects export, shape not worth modeling
   assets: any[]
-  // biome-ignore lint/suspicious/noExplicitAny: raw After Effects export, shape not worth modeling
+  // oxlint-disable-next-line typescript/no-explicit-any -- raw After Effects export, shape not worth modeling
   layers: any[]
-  // biome-ignore lint/suspicious/noExplicitAny: raw After Effects export, shape not worth modeling
+  // oxlint-disable-next-line typescript/no-explicit-any -- raw After Effects export, shape not worth modeling
   markers?: any[]
 }
 

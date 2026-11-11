@@ -4,37 +4,58 @@ We want this community to be friendly and respectful to each other. Please follo
 
 ## Development workflow
 
-To get started with the project, run `yarn` in the root directory to install the required dependencies for each package:
+The Node.js version is pinned in `.tool-versions` and managed with [mise](https://mise.jdx.dev/). Install it with:
 
 ```sh
-yarn
+mise install
 ```
 
-> While it's possible to use [`npm`](https://github.com/npm/cli), the tooling is built around [`yarn`](https://classic.yarnpkg.com/), so you'll have an easier time if you use `yarn` for development.
+We use [`pnpm`](https://pnpm.io/) as the package manager. Its version is pinned in the `packageManager` field of `package.json`; the easiest way to get it is through [Corepack](https://pnpm.io/installation#using-corepack), which ships with Node.js:
+
+```sh
+corepack enable
+```
+
+Then install the dependencies from the root directory:
+
+```sh
+pnpm install
+```
+
+> The lockfile and tooling are built around `pnpm`, so please don't install dependencies with `npm` or Yarn.
 
 While developing, you can run Storybook to preview your changes:
 
 ```sh
-yarn dev:docs
+pnpm dev:docs
 ```
 
-Make sure your code passes TypeScript and Biome. Run the following to verify:
+To try your changes in a real app on iOS, Android or web, run the Expo app in `example/`. It imports the library straight from `src/`, so edits reload without a build:
 
 ```sh
-yarn typecheck
-yarn lint
+pnpm example start    # then press i, a or w
+pnpm example ios      # or open one platform directly
+```
+
+Native platforms run in [Expo Go](https://expo.dev/go), which ships with `lottie-react-native`.
+
+Make sure your code passes TypeScript, Oxlint and Oxfmt. Run the following to verify:
+
+```sh
+pnpm typecheck
+pnpm lint
 ```
 
 To fix formatting errors, run the following:
 
 ```sh
-yarn lint --fix
+pnpm lint:fix
 ```
 
 Remember to add tests for your change if possible. Run the unit tests by:
 
 ```sh
-yarn test
+pnpm test
 ```
 
 ### Commit message convention
@@ -52,11 +73,9 @@ Our pre-commit hooks verify that your commit message matches this format when co
 
 ### Linting and tests
 
-[Biome](https://biomejs.dev/), [TypeScript](https://www.typescriptlang.org/)
+We use [TypeScript](https://www.typescriptlang.org/) for type checking, [Oxlint](https://oxc.rs/docs/guide/usage/linter) for linting, [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) for formatting the code, and [Jest](https://jestjs.io/) for testing.
 
-We use [TypeScript](https://www.typescriptlang.org/) for type checking, [Biome](https://biomejs.dev/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
-
-Our pre-commit hooks verify that the linter and tests pass when committing.
+Our pre-commit hooks verify that the linter and tests pass when committing. The hooks are managed by [Lefthook](https://lefthook.dev/) and configured in `lefthook.yml`; they are installed automatically when you install dependencies.
 
 ### Publishing to npm
 
@@ -65,16 +84,16 @@ We use [release-it](https://github.com/release-it/release-it) to make it easier 
 To publish new versions, run the following:
 
 ```sh
-yarn release
+pnpm release
 ```
 
 ### Scripts
 
 The `package.json` file contains various scripts for common tasks:
 
-- `yarn typescript`: type-check files with TypeScript.
-- `yarn lint`: lint and check formatting with Biome.
-- `yarn test`: run unit tests with Jest.
+- `pnpm typecheck`: type-check files with TypeScript.
+- `pnpm lint`: lint with Oxlint and check formatting with Oxfmt.
+- `pnpm test`: run unit tests with Jest.
 
 ### Sending a pull request
 

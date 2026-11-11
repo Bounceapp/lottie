@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import", "react"],
+  "categories": {
+    "correctness": "error"
+  },
+  "options": {
+    "typeAware": true
+  },
+  "ignorePatterns": ["lib", "docs"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-nested-ternary": "warn",
+    "no-else-return": "warn",
+    "no-console": "warn",
+    "no-irregular-whitespace": "error",
+    "import/no-cycle": "error",
+    "typescript/no-explicit-any": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "typescript/dot-notation": "error",
+        "typescript/no-unnecessary-condition": "warn"
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "no-unused-vars": "off"
+      }
+    }
+  ]
+}

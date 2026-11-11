@@ -25,9 +25,8 @@ npx expo install @bounceapp/lottie lottie-react-native lottie-react
 ## Usage
 
 ```tsx
-import React from "react"
-
 import { LottieView } from "@bounceapp/lottie"
+import React from "react"
 
 import lottieAnimation from "./lottieAnimation.json"
 
